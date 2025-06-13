@@ -10,12 +10,16 @@
     "workspaceFolder": "/workspace/arch-devcontainer-templates",
     "workspaceMount": "source=arch-devcontainer-templates-workspace,target=/workspace/arch-devcontainer-templates,type=volume",
     "mounts": [
-        "source=knowledge-base-home,target=/home/vscode,type=volume"
+        "source=arch-devcontainer-templates-home,target=/home/vscode,type=volume"
     ],
     "remoteUser": "vscode",
     "runArgs": [
         "--name", "arch-devcontainer-templates-workspace",
-        "--network=arch-devcontainer-templates-workspace-network"
+        "--network=arch-devcontainer-templates-workspace-network",
+        "-e", "HTTP_PROXY=",
+        "-e", "HTTPS_PROXY=",
+        "-e", "http_proxy=",
+        "-e", "https_proxy="
     
     ],
     "features": {
